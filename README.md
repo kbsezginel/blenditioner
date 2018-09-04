@@ -1,8 +1,7 @@
 # blenditioner
-Add automatic transitions in Blender video sequence editor
+Automated video transitions using Blender video sequence editor.
 
-## Documentation
-See [here](https://docs.blender.org/api/blender_python_api_2_77_0/bpy.types.Sequences.html)
+## Usage
 
 ### Add video
 
@@ -23,3 +22,6 @@ scene.sequence_editor.sequences.new_sound(name="song1", channel=3, frame_start=1
 scene.sequence_editor.sequences_all["song1"].frame_final_duration # Length of audio
 
 ```
+
+### Additional Resources
+- [Sequences API](https://docs.blender.org/api/blender_python_api_2_77_0/bpy.types.Sequences.html)
