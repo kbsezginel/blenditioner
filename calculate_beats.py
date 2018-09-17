@@ -24,7 +24,7 @@ duration = measures * time_signature[0] / bpm * 60
 print('| Duration: %i : %i  |  %5i frames  |' % (*sec_to_min_sec(duration), fps * duration))
 beat_dur = duration / measures
 print('|' + '-' * 36 + '|')
-print('| Beat length: %i frames %.1f seconds |' % (beat_dur * fps, beat_dur))
+print('| Beat length: %.2f frames %.2f s   |' % (beat_dur * fps, beat_dur))
 print('|' + '-' * 36 + '|')
 print('| Beat | Frame |   Time   | Strength |')
 for b, bs in zip(beats, beat_strength):
