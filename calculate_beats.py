@@ -11,8 +11,8 @@ time_signature = (4, 4)
 measures = 57
 beats = [4, 8, 12, 24, 32, 36, 48, 54]
 beat_strength = [0.2, 0.5, 0.8, 0.8, 1.0, 0.6, 1.0, 0.8]
-
-
+song_length = 61
+beat_division = 2
 
 def sec_to_min_sec(seconds):
     return (math.floor(seconds / 60), seconds % 60)
@@ -33,3 +33,15 @@ for b, bs in zip(beats, beat_strength):
     f = fps * d
     print('| %3i  |%6i | %2i : %2i  |%7.1f   |' % (b, f, t[0], t[1], bs))
 print('|' + '-' * 36 + '|')
+
+print('|       Beat       |      Frame      |')
+print('|' + '-' * 36 + '|')
+for b in range(int(song_length / beat_division)):
+    beat_num = b * beat_division
+
+    d = beat_num * time_signature[0] / bpm * 60
+    f = fps * d
+    if b % 2 == 0:
+        print('|      %4i      | | |    %7.2f    |' % (beat_num, f))
+    else:
+        print('|      %4i      |*|*|    %7.2f    |' % (beat_num, f))
